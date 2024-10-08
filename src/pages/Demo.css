@@ -1,5 +1,3 @@
-/* Full Code for AI Employee Form - CSS with Updated Styles */
-
 /* General Styles */
 .ai-employee-form-section {
     max-width: 700px;
@@ -52,6 +50,9 @@
     margin-bottom: 50px;
     opacity: 0;
     animation: fadeIn 1.8s ease forwards;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 @keyframes fadeIn {
@@ -66,15 +67,16 @@
 input[type="text"],
 select,
 textarea {
-    width: 100%;
+    width: calc(100% - 60px); /* Adjusted width to ensure it does not touch the sides */
     padding: 20px;
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     outline: none;
-    transition: all 0.3s;
     background: #f9f9f9;
-    margin-top: 10px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 textarea {
@@ -92,13 +94,25 @@ textarea:focus {
 /* Floating Label Styles */
 .input-label {
     position: absolute;
-    top: -12px;
-    left: 15px;
+    top: -20px;
+    left: 30px; /* Adjusted left position to ensure proper spacing */
     background: #fff;
     padding: 0 8px;
     color: #6200ea;
-    font-size: 18px;
+    font-size: 16px;
     pointer-events: none;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+input:focus + .input-label,
+input:not(:placeholder-shown) + .input-label,
+textarea:focus + .input-label,
+textarea:not(:placeholder-shown) + .input-label {
+    top: -30px;
+    left: 20px;
+    font-size: 14px;
+    color: #370091;
 }
 
 /* Text Input for Dynamic Fields */
@@ -149,4 +163,26 @@ textarea:focus {
 .test-now-button:active {
     background: #370091;
     transform: translateY(2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .ai-employee-form-section {
+        padding: 20px;
+    }
+    .section-heading {
+        font-size: 32px;
+    }
+    .test-now-button {
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+    .input-label {
+        left: 15px;
+    }
+    input[type="text"],
+    select,
+    textarea {
+        width: calc(100% - 30px); /* Adjusted for smaller screens */
+    }
 }
