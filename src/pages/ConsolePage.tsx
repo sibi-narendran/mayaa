@@ -299,7 +299,7 @@ useEffect(() => {
     disconnectConversation();
 
     // Redirect to another page
-    window.location.replace('https://your-redirect-url.com'); // Replace with your desired URL
+    window.location.replace('https://sibinarendran.com/'); // Replace with your desired URL
   }, 60000); // 60 seconds
 
   // Cleanup function to clear the timer if the component unmounts
