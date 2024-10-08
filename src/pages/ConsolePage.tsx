@@ -9,11 +9,9 @@
  * You can run it with `npm run relay`, in parallel with `npm start`
  */
 const LOCAL_RELAY_SERVER_URL: string =
-  process.env.REACT_APP_LOCAL_RELAY_SERVER_URL || '';
+  process.env.REACT_APP_LOCAL_RELAY_SERVER_URL || ''; 
 
 import { useEffect, useRef, useCallback, useState } from 'react';
-
-
 import { RealtimeClient } from '@openai/realtime-api-beta';
 import { ItemType } from '@openai/realtime-api-beta/dist/lib/client.js';
 import { WavRecorder, WavStreamPlayer } from '../lib/wavtools/index.js';
@@ -57,17 +55,10 @@ interface RealtimeEvent {
 
 export function ConsolePage() {
   /**
-   * Ask user for API Key
-   * If we're using the local relay server, we don't need this
+   * Hard-coded API Key
+   * Replace 'YOUR_OPENAI_API_KEY' with your actual API key
    */
-  const apiKey = LOCAL_RELAY_SERVER_URL
-    ? ''
-    : localStorage.getItem('tmp::voice_api_key') ||
-      prompt('OpenAI API Key') ||
-      '';
-  if (apiKey !== '') {
-    localStorage.setItem('tmp::voice_api_key', apiKey);
-  }
+  const apiKey = 'sk-svcacct-UQPBC9iaCCz_YO3sQ1wyN3BGyHrNRx2CJpHijdnqb_B90qQlvUguaq0P9yaDnT3BlbkFJU3OoMVGOmU6qyekA5lc0J59nLnQDZpYc1Fldj4XOvk30JIt-kV5gy1KAfsXHgA'; // <<< Replace this with your API key
 
   /**
    * Instantiate:
@@ -82,16 +73,12 @@ export function ConsolePage() {
     new WavStreamPlayer({ sampleRate: 24000 })
   );
   const clientRef = useRef<RealtimeClient>(
-    new RealtimeClient(
-      LOCAL_RELAY_SERVER_URL
-        ? { url: LOCAL_RELAY_SERVER_URL }
-        : {
-            apiKey: apiKey,
-            dangerouslyAllowAPIKeyInBrowser: true,
-          }
-    )
+    new RealtimeClient({
+      apiKey: apiKey,
+      dangerouslyAllowAPIKeyInBrowser: true,
+    })
   );
-
+  
   /**
    * References for
    * - Rendering audio visualization (canvas)
