@@ -46,18 +46,18 @@ function AIEmployeeForm() {
       transition={{ delay: 1, duration: 1 }}
       className="ai-employee-form-section"
     >
-      <h2 className="section-heading">Create and Test Your AI Employee Now</h2>
+      <h2 className="section-heading">Create and Test Your AI Now</h2>
       <form onSubmit={handleFormSubmit} className="ai-employee-form">
         <div className="form-group">
           <div className="input-container">
             <select id="role" value={role} onChange={(e) => setRole(e.target.value)} required>
               <option value="" disabled>Select a role</option>
-              <option value="sell">Sell your product or service</option>
-              <option value="appointments">Book and manage appointments for you</option>
-              <option value="info">Provide information or reminders to your customers</option>
+              <option value="sell">To Sell </option>
+              <option value="appointments">Book and manage appointments</option>
+              <option value="info">Provide information or remind</option>
               <option value="other">Something else (Please describe)</option>
             </select>
-            <label htmlFor="role" className="input-label">1. What role do you want your AI employee to handle?</label>
+            <label htmlFor="role" className="input-label">1. The AI's role is to:</label>
           </div>
           {role === 'other' && (
             <div className="input-container dynamic-input-container">
@@ -79,11 +79,11 @@ function AIEmployeeForm() {
           <div className="input-container">
             <select id="tone" value={tone} onChange={(e) => setTone(e.target.value)} required>
               <option value="" disabled>Select a tone</option>
-              <option value="friendly">Friendly and approachable</option>
-              <option value="professional">Professional and formal</option>
+              <option value="friendly">Friendly </option>
+              <option value="professional">Professional</option>
               <option value="other">Other (Please describe)</option>
             </select>
-            <label htmlFor="tone" className="input-label">2. What tone should your AI employee use when interacting with customers?</label>
+            <label htmlFor="tone" className="input-label">2. Tone of your AI: </label>
           </div>
           {tone === 'other' && (
             <div className="input-container dynamic-input-container">
@@ -136,7 +136,7 @@ function AIEmployeeForm() {
               maxLength={100}
               required
             />
-            <label htmlFor="targetAudience" className="input-label">5. Target audience</label>
+            <label htmlFor="targetAudience" className="input-label">5. who the AI have to speak with?</label>
           </div>
         </div>
 
@@ -150,7 +150,7 @@ function AIEmployeeForm() {
               maxLength={500}
               required
             />
-            <label htmlFor="productDetails" className="input-label">6. What specific information should the AI know to perform its role better?</label>
+            <label htmlFor="productDetails" className="input-label">6. What information the AI need to know?</label>
           </div>
         </div>
 
