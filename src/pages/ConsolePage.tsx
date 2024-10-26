@@ -58,7 +58,7 @@ export function ConsolePage() {
    * Hard-coded API Key
    * Replace 'YOUR_OPENAI_API_KEY' with your actual API key
    */
-  const apiKey = 'sk-svcacct-UQPBC9iaCCz_YO3sQ1wyN3BGyHrNRx2CJpHijdnqb_B90qQlvUguaq0P9yaDnT3BlbkFJU3OoMVGOmU6qyekA5lc0J59nLnQDZpYc1Fldj4XOvk30JIt-kV5gy1KAfsXHgA'; // <<< Replace this with your API key
+  const apiKey = 'sk-8diWWhzdu-KHS8NpxwmUAJvHF54VQdEU-ZoX5TXrD4T3BlbkFJoCDNCDjJ9fRoSosWOVPO0FtNkvO7HjvSt5UnsPeeAA'; // <<< Replace this with your API key
 
   /**
    * Instantiate:
