@@ -525,7 +525,8 @@ useEffect(() => {
     icon={Edit}
     iconPosition="end"
     buttonStyle="flush"
-    label={`api key: ${apiKey.slice(0, 3)}...`}
+    label={`api key: ${apiKey ? apiKey.slice(0, 3) : 'N/A'}...`}
+
     onClick={() => resetAPIKey()}
   />
 )}
