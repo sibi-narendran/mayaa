@@ -8,8 +8,8 @@
  * This will also require you to set OPENAI_API_KEY= in a `.env` file
  * You can run it with `npm run relay`, in parallel with `npm start`
  */
-const LOCAL_RELAY_SERVER_URL: string =
-  process.env.REACT_APP_LOCAL_RELAY_SERVER_URL || ''; 
+const apiKey = process.env.REACT_APP_API_KEY; // Accessing the environment variable for frontend apps
+
 
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { RealtimeClient } from '@openai/realtime-api-beta';
@@ -58,8 +58,7 @@ export function ConsolePage() {
    * Hard-coded API Key
    * Replace 'YOUR_OPENAI_API_KEY' with your actual API key
    */
-  const apiKey = 'sk-WPY4hNfu4Tc-iraX5w5tiMj8sV6kiHT58It54xo7gGT3BlbkFJCAFs-2JC_vcwcutj1NzFBFMWlPC3x6HKVasQfLXTkA'; // <<< Replace this with your API key
-
+ const apiKey = process.env.API_KEY; // Accessing the environment variable
   /**
    * Instantiate:
    * - WavRecorder (speech input)
