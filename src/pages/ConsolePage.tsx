@@ -59,7 +59,8 @@ export function ConsolePage() {
    * Hard-coded API Key
    * Replace 'YOUR_OPENAI_API_KEY' with your actual API key
    */
- const apiKey = process.env.API_KEY; // Accessing the environment variable
+const apiKey = process.env.REACT_APP_API_KEY || ''; // Set default to empty string if undefined
+
   /**
    * Instantiate:
    * - WavRecorder (speech input)
