@@ -287,7 +287,7 @@ useEffect(() => {
     disconnectConversation();
 
     // Redirect to another page
-    window.location.replace('https://sibinarendran.com/'); // Replace with your desired URL
+    window.location.replace('https://cal.com/sibinarendran/get-your-own-ai-call-agent?month=2024-10&date=2024-10-27'); // Replace with your desired URL
   }, 60000); // 60 seconds
 
   // Cleanup function to clear the timer if the component unmounts
