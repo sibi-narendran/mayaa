@@ -520,15 +520,15 @@ useEffect(() => {
           <span>press connect to start</span>
         </div>
         <div className="content-api-key">
-          {!LOCAL_RELAY_SERVER_URL && (
-            <Button
-              icon={Edit}
-              iconPosition="end"
-              buttonStyle="flush"
-              label={`api key: ${apiKey.slice(0, 3)}...`}
-              onClick={() => resetAPIKey()}
-            />
-          )}
+          {!process.env.REACT_APP_LOCAL_RELAY_SERVER_URL && (
+  <Button
+    icon={Edit}
+    iconPosition="end"
+    buttonStyle="flush"
+    label={`api key: ${apiKey.slice(0, 3)}...`}
+    onClick={() => resetAPIKey()}
+  />
+)}
         </div>
       </div>
       <div className="content-main">
