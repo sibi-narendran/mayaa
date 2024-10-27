@@ -8,7 +8,8 @@
  * This will also require you to set OPENAI_API_KEY= in a `.env` file
  * You can run it with `npm run relay`, in parallel with `npm start`
  */
-const apiKey = process.env.REACT_APP_API_KEY; // Accessing the environment variable for frontend apps
+const apiKey = process.env.REACT_APP_API_KEY || ''; // Set default to empty string if undefined
+
 
 
 import { useEffect, useRef, useCallback, useState } from 'react';
